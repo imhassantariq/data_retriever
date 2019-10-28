@@ -8,7 +8,15 @@
 
 function data_retriever_admin_menu_option()
 {
-    add_menu_page('Settings for Data Retriever', 'Data Retriever', 'manage_options', 'data-retriever-settings', 'data_retriever_settings_page', '', 200);
+    add_menu_page(
+        'Settings for Data Retriever',
+        'Data Retriever',
+        'manage_options',
+        'data-retriever-settings',
+        'data_retriever_settings_page',
+        '',
+        200
+    );
 }
 
 add_action('admin_menu', 'data_retriever_admin_menu_option');
@@ -34,7 +42,7 @@ function data_retriever_settings_page()
             <form method="post" action="">
                 <label for="url">Url</label>
                 <input type="url" class="large-text" name="url" placeholder="https://jsonplaceholder.typicode.com/todos/1" value="<?php print $url; ?>" required>
-                <label for="authorization_key">Authorization Key</label> 
+                <label for="authorization_key">Authorization Key</label>
                 <input type="text" class="large-text" name="authorization_key" value="<?php print $authorization_key; ?>" placeholder="Basic bWFuYWdlcjE6dGVzdDEyMzQ1Ng==">
                 <input type=submit  name="submit_settings" class="button button-primary" value="UPDATE SETTTINGS">
             </form>
