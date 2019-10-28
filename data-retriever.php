@@ -16,7 +16,7 @@ function get_data_through_api()
     $err = "Please Set your Plugin settings before using";
     $url = get_option('api_url', 'None');
     $key = get_option('api_authorization_key', 'None');
-    
+
     if ($url == 'None') {
         return $err;
     }
@@ -26,9 +26,9 @@ function get_data_through_api()
             'Authorization' => $key
         )
     );
-    
+
     $body = wp_remote_retrieve_body(wp_remote_get($url, $args));
-    
+
     return $body;
 }
 
